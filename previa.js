@@ -40,19 +40,16 @@ export function contarCaracter(palavra,letra){
 }
 
 export function atualizarPropriedade(objeto, propriedade, novoValor){
-    let retornoVerificarPropriedade
     if(!propriedade){
         return null
-    } else {
-        for (const key in objeto) {
-            if(key == propriedade){
-                objeto[key]= novoValor
-                return objeto
-            } else{
-                retornoVerificarPropriedade = null
-            }
-        }
-        return retornoVerificarPropriedade
-    }
+    } 
+    let keysObjeto = Object.keys(objeto)
+    let propriedadeObjeto = keysObjeto.find((chave) => chave == propriedade)
 
+    if(propriedadeObjeto){
+        objeto[propriedadeObjeto] = novoValor
+        return objeto
+    } else {
+        return null
+    }
 }
