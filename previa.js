@@ -43,8 +43,9 @@ export function atualizarPropriedade(objeto, propriedade, novoValor){
     if(!propriedade){
         return null
     } 
-    let keysObjeto = Object.keys(objeto)
-    let propriedadeObjeto = keysObjeto.find((chave) => chave == propriedade)
+
+    let chaveObjeto = Object.keys(objeto)
+    let propriedadeObjeto = chaveObjeto.find((chave) => chave == propriedade)
 
     if(propriedadeObjeto){
         objeto[propriedadeObjeto] = novoValor
